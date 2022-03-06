@@ -45,10 +45,9 @@ const Home = ({ data, isLoading, category }) => {
   return (
     <>
       <Header getQuery={(q) => setQuery(q)} />
-      {isLoading ? (
-        <h1>Loading</h1>
-      ) : (
-        <>
+     
+         {items?
+         <>
           <Headlines isLoading={isloading} data={items} />
           <Container className="d-flex justify-content-between my-3">
             <Button disabled={page <= 1} variant="dark" onClick={previouspage}>
@@ -61,9 +60,9 @@ const Home = ({ data, isLoading, category }) => {
             >
               Next &rarr;
             </Button>
-          </Container>
-        </>
-      )}
+          </Container></>:<h1>Loading</h1>
+         
+      }
     </>
   );
 };
